@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ru.green</groupId>
+    <artifactId>green</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>green</name>
+
+    <properties>
+        <java.version>1.11</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <hibernate.version>5.2.9.Final</hibernate.version>
+        <fasterxml.version>2.8.1</fasterxml.version>
+        <postgresql.version>42.1.4</postgresql.version>
+
+        <spring.version>5.3.4</spring.version>
+
+        <db.host>localhost</db.host>
+        <db.port>5432</db.port>
+        <db.driver>org.postgresql.Driver</db.driver>
+        <db.name>green</db.name>
+        <db.cache>org.hibernate.cache.EhCacheProvider</db.cache>
+        <db.dialect>org.hibernate.dialect.PostgreSQL82Dialect</db.dialect>
+        <db.admin.url>jdbc:postgresql://${db.host}:${db.port}/postgres</db.admin.url>
+        <db.url>jdbc:postgresql://${db.host}:${db.port}/${db.name}</db.url>
+        <db.username>postgres</db.username>
+        <db.password>postgres</db.password>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.11</source>
+                    <target>1.11</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+    </dependencies>
+</project>
